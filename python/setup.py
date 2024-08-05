@@ -4,7 +4,6 @@ INSTALL_REQUIRES = [
   "cyclonedds",
   "numpy",
   "pygame",
-  "pin"
 ]
 
 setup(

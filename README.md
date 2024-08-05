@@ -6,7 +6,7 @@ This project aims to simplify the communication with [Unitree Robots](https://gi
 Execute the following commands in the terminal:
 ```bash
 git clone https://github.com/unitreerobotics/unitree_dds_wrapper.git
-
+conda install pinocchio -c conda-forge
 cd unitree_dds_wrapper/python
 pip3 install -e . 
 ```
