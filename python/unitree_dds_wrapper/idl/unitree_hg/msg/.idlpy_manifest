@@ -6,6 +6,10 @@ BmsState_
 dds_
 
 
+HandCmd_
+dds_
+
+
 HandState_
 dds_
 
@@ -19,6 +23,10 @@ dds_
 
 
 LowState_
+dds_
+
+
+MainBoardState_
 dds_
 
 

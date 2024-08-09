@@ -8,7 +8,7 @@
 
 from enum import auto
 from typing import TYPE_CHECKING, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import cyclonedds.idl as idl
 import cyclonedds.idl.annotations as annotate
@@ -22,11 +22,11 @@ from unitree_dds_wrapper.idl import unitree_hg
 @annotate.final
 @annotate.autoid("sequential")
 class HandState_(idl.IdlStruct, typename="unitree_hg.msg.dds_.HandState_"):
-    motor_state: types.sequence['unitree_dds_wrapper.idl.unitree_hg.msg.dds_.MotorState_'] = field(default_factory=lambda: [])
-    imu_state: 'unitree_dds_wrapper.idl.unitree_hg.msg.dds_.IMUState_' = field(default_factory=lambda: unitree_hg.msg.dds_.IMUState_())
-    press_sensor_state: types.sequence['unitree_dds_wrapper.idl.unitree_hg.msg.dds_.PressSensorState'] = field(default_factory=lambda: [])
-    power_v: types.float32 = field(default_factory=lambda: 0.0)
-    power_a: types.float32 = field(default_factory=lambda: 0.0)
-    reserve: types.array[types.uint32, 2] = field(default_factory=lambda: [0, 0])
+    motor_state: types.sequence['unitree_hg.msg.dds_.MotorState_']
+    imu_state: 'unitree_hg.msg.dds_.IMUState_'
+    press_sensor_state: types.sequence['unitree_hg.msg.dds_.PressSensorState_']
+    power_v: types.float32
+    power_a: types.float32
+    reserve: types.array[types.uint32, 2]
 
 

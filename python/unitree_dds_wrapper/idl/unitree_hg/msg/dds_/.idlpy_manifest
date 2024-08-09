@@ -6,6 +6,10 @@ BmsState_
 
 BmsState_
 
+HandCmd_
+
+HandCmd_
+
 HandState_
 
 HandState_
@@ -21,6 +25,10 @@ LowCmd_
 LowState_
 
 LowState_
+
+MainBoardState_
+
+MainBoardState_
 
 MotorCmd_
 
@@ -32,4 +40,4 @@ MotorState_
 
 PressSensorState_
 
-PressSensorState
+PressSensorState_

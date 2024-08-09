@@ -6,6 +6,10 @@ BmsState_
 msg
 
 
+HandCmd_
+msg
+
+
 HandState_
 msg
 
@@ -19,6 +23,10 @@ msg
 
 
 LowState_
+msg
+
+
+MainBoardState_
 msg
 
 

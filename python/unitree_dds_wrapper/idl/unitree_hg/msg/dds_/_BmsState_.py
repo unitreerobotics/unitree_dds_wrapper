@@ -8,31 +8,32 @@
 
 from enum import auto
 from typing import TYPE_CHECKING, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import cyclonedds.idl as idl
 import cyclonedds.idl.annotations as annotate
 import cyclonedds.idl.types as types
 
 # root module import for resolving types
+from unitree_dds_wrapper.idl import unitree_hg
 
 
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
 class BmsState_(idl.IdlStruct, typename="unitree_hg.msg.dds_.BmsState_"):
-    version_high: types.uint8 = field(default_factory=lambda: 0)
-    version_low: types.uint8 = field(default_factory=lambda: 0)
-    fn: types.uint8 = field(default_factory=lambda: 0)
-    cell_vol: types.array[types.uint16, 40] = field(default_factory=lambda: [0 for _ in range(40)])
-    bmsvoltage: types.array[types.uint32, 3] = field(default_factory=lambda: [0 for _ in range(3)])
-    current: types.int32 = field(default_factory=lambda: 0)
-    soc: types.uint8 = field(default_factory=lambda: 0)
-    soh: types.uint8 = field(default_factory=lambda: 0)
-    temperature: types.array[types.int16, 12] = field(default_factory=lambda: [0 for _ in range(12)])
-    cycle: types.uint16 = field(default_factory=lambda: 0)
-    manufacturer_date: types.uint16 = field(default_factory=lambda: 0)
-    bmsstate: types.array[types.uint32, 5] = field(default_factory=lambda: [0 for _ in range(5)])
-    reserve: types.array[types.uint32, 3] = field(default_factory=lambda: [0 for _ in range(3)])
+    version_high: types.uint8
+    version_low: types.uint8
+    fn: types.uint8
+    cell_vol: types.array[types.uint16, 40]
+    bmsvoltage: types.array[types.uint32, 3]
+    current: types.int32
+    soc: types.uint8
+    soh: types.uint8
+    temperature: types.array[types.int16, 12]
+    cycle: types.uint16
+    manufacturer_date: types.uint16
+    bmsstate: types.array[types.uint32, 5]
+    reserve: types.array[types.uint32, 3]
 
 

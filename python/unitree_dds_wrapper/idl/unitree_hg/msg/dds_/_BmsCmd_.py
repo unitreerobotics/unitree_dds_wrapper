@@ -8,19 +8,21 @@
 
 from enum import auto
 from typing import TYPE_CHECKING, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import cyclonedds.idl as idl
 import cyclonedds.idl.annotations as annotate
 import cyclonedds.idl.types as types
 
 # root module import for resolving types
+from unitree_dds_wrapper.idl import unitree_hg
+
 
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
 class BmsCmd_(idl.IdlStruct, typename="unitree_hg.msg.dds_.BmsCmd_"):
-    cmd: types.uint8 = field(default_factory=lambda: 0)
-    reserve: types.array[types.uint8, 40] = field(default_factory=lambda: [ 0 for _ in range(40)])
+    cmd: types.uint8
+    reserve: types.array[types.uint8, 40]
 
 

@@ -8,7 +8,7 @@
 
 from enum import auto
 from typing import TYPE_CHECKING, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import cyclonedds.idl as idl
 import cyclonedds.idl.annotations as annotate
@@ -22,22 +22,14 @@ from unitree_dds_wrapper.idl import unitree_hg
 @annotate.final
 @annotate.autoid("sequential")
 class LowState_(idl.IdlStruct, typename="unitree_hg.msg.dds_.LowState_"):
-    head: types.array[types.uint8, 2] = field(default_factory=lambda: [0x55, 0xAA])
-    version: types.array[types.uint32, 2] = field(default_factory=lambda: [0, 0])
-    mode: types.uint8 = field(default_factory=lambda: 0)
-    tick: types.uint32 = field(default_factory=lambda: 0)
-    imu_state: 'unitree_dds_wrapper.idl.unitree_hg.msg.dds_.IMUState_' = field(default_factory=lambda: unitree_hg.msg.dds_.IMUState_())
-    motor_state: types.array['unitree_dds_wrapper.idl.unitree_hg.msg.dds_.MotorState_', 30] = field(default_factory=lambda: [unitree_hg.msg.dds_.MotorState_() for _ in range(30)])
-    bms_state: 'unitree_dds_wrapper.idl.unitree_hg.msg.dds_.BmsState_' = field(default_factory=lambda: unitree_hg.msg.dds_.BmsState_())
-    foot_force_state: types.array[types.int16, 4] = field(default_factory=lambda: [0 for _ in range(4)])
-    foot_force_est_state: types.array[types.int16, 4] = field(default_factory=lambda: [0 for _ in range(4)])
-    wireless_remote: types.array[types.uint8, 40] = field(default_factory=lambda: [0 for _ in range(40)])
-    temperature: types.array[types.int16, 10] = field(default_factory=lambda: [0 for _ in range(10)])
-    value: types.array[types.float32, 10] = field(default_factory=lambda: [0 for _ in range(10)])
-    fan_state: types.array[types.uint16, 10] = field(default_factory=lambda: [0 for _ in range(10)])
-    state: types.array[types.uint32, 10] = field(default_factory=lambda: [0 for _ in range(10)])
-    data: types.array[types.uint8, 64] = field(default_factory=lambda: [0 for _ in range(64)])
-    reserve: types.array[types.uint32, 2] = field(default_factory=lambda: [0, 0])
-    crc: types.uint32 = field(default_factory=lambda: 0)
+    version: types.array[types.uint32, 2]
+    mode_pr: types.uint8
+    mode_machine: types.uint8
+    tick: types.uint32
+    imu_state: 'unitree_dds_wrapper.idl.unitree_hg.msg.dds_.IMUState_'
+    motor_state: types.array['unitree_dds_wrapper.idl.unitree_hg.msg.dds_.MotorState_', 35]
+    wireless_remote: types.array[types.uint8, 40]
+    reserve: types.array[types.uint32, 4]
+    crc: types.uint32
 
 

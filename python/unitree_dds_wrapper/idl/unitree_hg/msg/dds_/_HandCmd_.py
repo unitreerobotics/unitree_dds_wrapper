@@ -8,7 +8,7 @@
 
 from enum import auto
 from typing import TYPE_CHECKING, Optional
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 import cyclonedds.idl as idl
 import cyclonedds.idl.annotations as annotate
@@ -17,10 +17,11 @@ import cyclonedds.idl.types as types
 # root module import for resolving types
 from unitree_dds_wrapper.idl import unitree_hg
 
+
 @dataclass
 @annotate.final
 @annotate.autoid("sequential")
 class HandCmd_(idl.IdlStruct, typename="unitree_hg.msg.dds_.HandCmd_"):
-    motor_cmd: types.sequence['unitree_dds_wrapper.idl.unitree_hg.msg.dds_.MotorCmd_'] = field(default_factory=lambda: [])
+    motor_cmd: types.sequence['unitree_hg.msg.dds_.MotorCmd_']
 
 
