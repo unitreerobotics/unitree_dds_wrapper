@@ -5,12 +5,12 @@ import struct
 import numpy as np
 
 class LowCmd(Subscription):
-    def __init__(self, participant = None, topic: str = "rt/lowcmd_hx"):
+    def __init__(self, participant = None, topic: str = "rt/lowcmd"):
         super().__init__(unitree_hg.msg.dds_.LowCmd_, topic=topic, participant=participant)
         self.msg: unitree_hg.msg.dds_.LowCmd_
 
 class LowState(Subscription):
-    def __init__(self, participant = None, topic: str = "rt/lowstate_hx"):
+    def __init__(self, participant = None, topic: str = "rt/lowstate"):
         super().__init__(unitree_hg.msg.dds_.LowState_, topic=topic, participant=participant)
         self.msg: unitree_hg.msg.dds_.LowState_
         self.joystick = Joystick()

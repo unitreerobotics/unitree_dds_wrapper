@@ -35,6 +35,7 @@ class Subscription(ABC):
         self.pre_communication()
         self.msg = msg
         self.post_communication()
+      time.sleep(0.001)
   
   def isTimeout(self) -> bool:
     return time.time() - self._last_recv_time > self.timeout_ms / 1000.
